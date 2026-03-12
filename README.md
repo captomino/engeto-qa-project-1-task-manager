@@ -1,4 +1,5 @@
 # Task Manager
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
 
 ## O projektu
 
@@ -165,3 +166,4 @@ GitHub: [github.com/captomino](https://github.com/captomino)
 ## Licence
 
 Tento projekt je určen výhradně pro vzdělávací účely.
+
