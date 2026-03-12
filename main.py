@@ -38,10 +38,20 @@ def pridat_ukol():
     """
     Přidá nový úkol do seznamu.
     Uživatel musí zadat neprázdný název i popis.
+    Pomocí 'q' se může vrátit do hlavního menu.
     """
     while True:
-        nazev = input("\nZadejte název úkolu: ").strip()
-        popis = input("Zadejte popis úkolu: ").strip()
+        nazev = input("\nZadejte název úkolu (nebo 'q' pro návrat do menu): ").strip()
+
+        if nazev.lower() == "q":
+            print("Návrat do hlavního menu.")
+            return
+
+        popis = input("Zadejte popis úkolu (nebo 'q' pro návrat do menu): ").strip()
+
+        if popis.lower() == "q":
+            print("Návrat do hlavního menu.")
+            return
 
         if not nazev or not popis:
             print("Název ani popis nesmí být prázdný. Zkuste to znovu.")
@@ -80,6 +90,7 @@ def odstranit_ukol():
     """
     Odstraní úkol podle čísla zadaného uživatelem.
     Ošetřuje neplatné vstupy a rozsah seznamu.
+    Pomocí 'q' se uživatel může vrátit do hlavního menu.
     """
     if not ukoly:
         print("Seznam úkolů je prázdný. Není co odstranit.")
@@ -88,7 +99,11 @@ def odstranit_ukol():
     zobrazit_ukoly()
 
     while True:
-        volba = input("\nZadejte číslo úkolu, který chcete odstranit: ").strip()
+        volba = input("\nZadejte číslo úkolu, který chcete odstranit (nebo 'q' pro návrat): ").strip()
+
+        if volba.lower() == "q":
+            print("Návrat do hlavního menu.")
+            return
 
         try:
             cislo = int(volba)
@@ -101,7 +116,7 @@ def odstranit_ukol():
                 print("Zadané číslo není v seznamu. Zkuste to znovu.")
 
         except ValueError:
-            print("Neplatný vstup. Zadejte prosím číslo.")
+            print("Neplatný vstup. Zadejte prosím číslo nebo 'q'.")
 
 
 # ==============================
