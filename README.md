@@ -8,13 +8,16 @@ Aplikace umožňuje:
 - přidání nového úkolu
 - zobrazení všech uložených úkolů
 - odstranění vybraného úkolu
+- návrat do hlavního menu pomocí únikového znaku
 - ukončení programu
 
 Úkoly jsou – v souladu se zadáním – ukládány do seznamu v paměti aplikace po dobu běhu programu.  **Po ukončení aplikace nejsou data perzistentní**.
 
 ## Cíl projektu
 
-Cílem projektu bylo navrhnout a otestovat jednoduchou konzolovou aplikaci se zaměřením na validační logiku, ošetření chybových stavů a pokrytí funkcionality testovacími scénáři.
+Cílem projektu bylo navrhnout a otestovat jednoduchou konzolovou aplikaci se zaměřením na validační logiku, ošetření chybových stavů a pokrytí funkcionality testovacími scénáři.  
+
+Součástí implementace je také **uživatelsky bezpečné ovládání**, které umožňuje kdykoliv opustit některé operace a vrátit se zpět do hlavního menu.
 
 ## Funkce aplikace
 
@@ -39,7 +42,13 @@ Přidá nový úkol do seznamu.
 Validace:
 - název nesmí být prázdný
 - popis nesmí být prázdný
-- název musí být unikátní (case insensitive kontrola)
+- název musí být unikátní (case insensitive kontrola)  
+
+Funkce také umožňuje **kdykoliv opustit přidávání úkolu** zadáním únikového znaku:  
+```
+q
+```
+Po jeho zadání se aplikace vrátí do hlavního menu bez vytvoření úkolu.
 
 Po úspěšném přidání je vypsána potvrzovací zpráva.
 
@@ -61,7 +70,13 @@ Ošetřuje:
 - záporné číslo
 - hodnotu 0
 - číslo mimo rozsah seznamu
-- opakované zadání po chybě
+- opakované zadání po chybě  
+
+Stejně jako při přidávání úkolu může uživatel operaci kdykoliv opustit zadáním:  
+```
+q
+```
+Aplikace se následně vrátí zpět do hlavního menu bez provedení změny.
 
 ## Použité technologie
 
